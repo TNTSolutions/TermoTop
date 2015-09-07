@@ -17,6 +17,8 @@
             return new ApplicationDbContext();
         }
 
+        public virtual IDbSet<NavigationItem> NavigationItems { get; set; }
+
         public override int SaveChanges()
         {
             return base.SaveChanges();

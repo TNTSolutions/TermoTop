@@ -29,6 +29,11 @@
             get { return this.GetRepository<User>(); }
         }
 
+        public IRepository<NavigationItem> NavigationItems
+        {
+            get { return this.GetRepository<NavigationItem>(); }
+        }
+
         /// <summary>
         /// Saves all changes made in this context to the underlying database.
         /// </summary>

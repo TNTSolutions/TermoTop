@@ -3,8 +3,12 @@
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
 
+    using TermoTop.Data.Models;
+
     public interface IApplicationDbContext
     {
+        IDbSet<NavigationItem> NavigationItems { get; set; }
+
         int SaveChanges();
 
         void Dispose();
