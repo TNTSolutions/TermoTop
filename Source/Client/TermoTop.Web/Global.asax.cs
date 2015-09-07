@@ -1,9 +1,12 @@
 ﻿namespace TermoTop.Web
 {
+    using System.Reflection;
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
+
+    using TermoTop.Web.Infrastructure.Mapping;
 
     public class MvcApplication : HttpApplication
     {
@@ -16,6 +19,9 @@
 
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new RazorViewEngine());
+
+            var autoMapperConfig = new AutoMapperConfig(Assembly.GetExecutingAssembly());
+            autoMapperConfig.Execute();
         }
     }
 }
